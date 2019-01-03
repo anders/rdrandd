@@ -1,0 +1,9 @@
+[Unit]
+Description=make /dev/random great again
+
+[Service]
+ExecStart=/usr/local/sbin/rdrandd
+
+[Install]
+WantedBy=multi-user.target
+

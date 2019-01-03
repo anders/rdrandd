@@ -60,9 +60,9 @@ int main(int argc, char *argv[]) {
     rpi->entropy_count = count * 8;
     rpi->buf_size = count;
 
-    fprintf(stderr,
-            "entropy count (%d) < limit (%d), adding %d bits of entropy...\n",
-            entropy_count, OK_ENTROPY, rpi->entropy_count);
+    // fprintf(stderr,
+    //         "entropy count (%d) < limit (%d), adding %d bits of entropy...\n",
+    //         entropy_count, OK_ENTROPY, rpi->entropy_count);
 
     int32_t r;
     for (int i = 0; i < count; i++) {

@@ -1,4 +1,5 @@
-CFLAGS=-Wall -O2 -g -mrdrnd
+CFLAGS=-Wall -O2 -mrdrnd
+PREFIX?=/usr/local
 
 rdrandd: rdrandd.c
 	$(CC) $(CFLAGS) -o $@ $<
@@ -6,5 +7,8 @@ rdrandd: rdrandd.c
 clean:
 	rm rdrandd
 
-.PHONY : clean
+install: rdrandd
+	install -m755 rdrandd $(DESTDIR)$(PREFIX)/sbin/rdrandd
+
+.PHONY : clean install
 
