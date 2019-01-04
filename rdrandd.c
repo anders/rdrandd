@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  int count = 128; // 128 * 4 bits
+  int count = 128;
   struct rand_pool_info *rpi;
   rpi = malloc(sizeof(struct rand_pool_info) + count * 4);
   if (rpi == NULL) {
@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
       continue;
     }
 
-    rpi->entropy_count = count * 8;
+    rpi->entropy_count = count * 32; // int32_t * count bits
     rpi->buf_size = count;
 
     // fprintf(stderr,
